@@ -39,8 +39,36 @@ const schedule = [
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [trialOpen, setTrialOpen] = useState(false);
+  const [trialForm, setTrialForm] = useState({
+    name: "",
+    contact: "",
+    email: "",
+    message: "",
+    date: "",
+    time: ""
+  });
 
   const closeMenu = () => setMenuOpen(false);
+
+  const updateTrialField = (field) => (e) =>
+    setTrialForm((prev) => ({ ...prev, [field]: e.target.value }));
+
+  const sendToWhatsApp = (e) => {
+    e.preventDefault();
+    const { name, contact, email, message, date, time } = trialForm;
+    const text =
+`New Trial Class Request
+Name: ${name}
+Contact: ${contact}
+Email: ${email || "-"}
+Preferred Date: ${date || "-"}
+Preferred Time: ${time || "-"}
+Message: ${message || "-"}`;
+
+    window.open(`https://wa.me/917876644716?text=${encodeURIComponent(text)}`, "_blank");
+    setTrialOpen(false);
+  };
 
   return (
     <div className="page">
@@ -223,7 +251,9 @@ function App() {
               <p className="kicker">Ready when you are</p>
               <h2>Your next move<br /><em>starts here.</em></h2>
               <p>Come try a class. No perfect steps required — just bring your energy.</p>
-              <a href="#contact" className="primary-btn">Book a trial class <span>→</span></a>
+              <button type="button" className="primary-btn" onClick={() => setTrialOpen(true)}>
+                Book a trial class <span>→</span>
+              </button>
             </div>
           </section>
 
@@ -299,6 +329,47 @@ function App() {
           <div className="footer-bottom"><span>© 2026 Naveen Studios</span><span>Made for people who love to move.</span><a href="#home">Back to top ↑</a></div>
         </footer>
       </div>
+
+      {/* TRIAL CLASS DRAWER */}
+      <div
+        className={`trial-overlay ${trialOpen ? "show" : ""}`}
+        onClick={() => setTrialOpen(false)}
+      />
+
+      <aside className={`trial-drawer ${trialOpen ? "open" : ""}`}>
+        <div className="trial-drawer-head">
+          <h3>Book a trial class</h3>
+          <button className="trial-close" onClick={() => setTrialOpen(false)} aria-label="Close">✕</button>
+        </div>
+
+        <form className="trial-form" onSubmit={sendToWhatsApp}>
+          <label>
+            Name
+            <input type="text" required value={trialForm.name} onChange={updateTrialField("name")} />
+          </label>
+          <label>
+            Contact number
+            <input type="tel" required value={trialForm.contact} onChange={updateTrialField("contact")} />
+          </label>
+          <label>
+            Email (optional)
+            <input type="email" value={trialForm.email} onChange={updateTrialField("email")} />
+          </label>
+          <label>
+            Preferred date
+            <input type="date" value={trialForm.date} onChange={updateTrialField("date")} />
+          </label>
+          <label>
+            Preferred time
+            <input type="time" value={trialForm.time} onChange={updateTrialField("time")} />
+          </label>
+          <label>
+            Message
+            <textarea rows="3" value={trialForm.message} onChange={updateTrialField("message")} />
+          </label>
+          <button type="submit" className="primary-btn">Send on WhatsApp <span>→</span></button>
+        </form>
+      </aside>
     </div>
   );
 }
