@@ -96,11 +96,6 @@ function App() {
                 <a href="#classes" className="primary-btn">Explore Classes <span>→</span></a>
                 <a href="#about" className="text-btn">Our story <span>↗</span></a>
               </div>
-              <div className="hero-stats">
-                <div><strong>4+</strong><span>Dance styles</span></div>
-                <div><strong>6</strong><span>Weekly classes</span></div>
-                <div><strong>∞</strong><span>Ways to express</span></div>
-              </div>
             </div>
             <div className="hero-image">
               <div className="image-ring" />
