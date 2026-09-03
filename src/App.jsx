@@ -66,7 +66,7 @@ Preferred Date: ${date || "-"}
 Preferred Time: ${time || "-"}
 Message: ${message || "-"}`;
 
-    window.open(`https://wa.me/917876644716?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/917018753503?text=${encodeURIComponent(text)}`, "_blank");
     setTrialOpen(false);
   };
 
