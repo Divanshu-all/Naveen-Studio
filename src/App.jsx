@@ -66,7 +66,7 @@ Preferred Date: ${date || "-"}
 Preferred Time: ${time || "-"}
 Message: ${message || "-"}`;
 
-    window.open(`https://wa.me/917018753503?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
     setTrialOpen(false);
   };
 
@@ -75,9 +75,9 @@ Message: ${message || "-"}`;
       <div className="site-container">
         <header className="navbar">
           <a href="#home" className="logo" onClick={closeMenu}>
-            <img src="/logo.webp" alt="Naveen Studios logo" className="logo-img" />
+            <img src="/logo.webp" alt="Sunny Studios logo" className="logo-img" />
             <div className="logo-text">
-              <strong>NAVEEN</strong>
+              <strong>SUNNY</strong>
               <span>STUDIOS</span>
             </div>
           </a>
@@ -87,7 +87,6 @@ Message: ${message || "-"}`;
             <a href="#classes">Classes</a>
             <a href="#about">About</a>
             <a href="#faculty">Faculty</a>
-            <a href="#gallery">Gallery</a>
             <a href="#contact">Contact</a>
             <a href="#enroll" className="enroll-btn">Enroll Now <span>↗</span></a>
           </nav>
@@ -101,7 +100,7 @@ Message: ${message || "-"}`;
           </button>
 
           <nav className={`mobile-nav ${menuOpen ? "show" : ""}`}>
-            {["Home", "Classes", "About", "Faculty", "Gallery", "Contact"].map((item) => (
+            {["Home", "Classes", "About", "Faculty", "Contact"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} onClick={closeMenu}>{item}</a>
             ))}
             <a href="#enroll" className="mobile-enroll" onClick={closeMenu}>Enroll Now ↗</a>
@@ -127,7 +126,7 @@ Message: ${message || "-"}`;
             </div>
             <div className="hero-image">
               <div className="image-ring" />
-              <img src="/landing.webp" alt="Dancers at Naveen Studios" />
+              <img src="/landing.webp" alt="Dancers at Sunny Studios" />
               <div className="floating-note note-top"><b>01</b><span>Find your<br />flow</span></div>
               <div className="floating-note note-bottom"><span className="play">▶</span><span>Feel the<br />music</span></div>
             </div>
@@ -148,7 +147,7 @@ Message: ${message || "-"}`;
                 <p className="kicker">More than a dance class</p>
                 <h2>A place to find <em>your beat.</em></h2>
                 <p>
-                  Welcome to Naveen Studios — a warm, creative and inspiring space
+                  Welcome to Sunny Studios — a warm, creative and inspiring space
                   where dance becomes a way to express, connect and grow.
                 </p>
                 <p>
@@ -213,7 +212,7 @@ Message: ${message || "-"}`;
             <div className="faculty-grid">
               <div className="faculty-image">
                 <div className="faculty-accent">TEACH<br />WITH<br />HEART.</div>
-                <img src="/teacher.webp" alt="Naveen Studios instructor and dancers" />
+                <img src="/teacher.webp" alt="Sunny Studios instructor and dancers" />
               </div>
               <div className="faculty-content">
                 <p className="kicker">Guidance that moves you</p>
@@ -228,20 +227,6 @@ Message: ${message || "-"}`;
                 </div>
                 <a href="#contact" className="primary-btn dark">Talk to us <span>→</span></a>
               </div>
-            </div>
-          </section>
-
-          <section className="gallery-section" id="gallery">
-            <div className="gallery-head">
-              <div><p className="kicker">Inside the studio</p><h2>Good energy<br /><em>looks like this.</em></h2></div>
-              <a href="#contact" className="text-btn">Join the next session ↗</a>
-            </div>
-            <div className="gallery-grid">
-              <div className="gallery-item tall"><img src="/punjabi.webp" alt="Punjabi dance" /></div>
-              <div className="gallery-item"><img src="/hiphop.webp" alt="Hip-hop dance" /></div>
-              <div className="gallery-item quote-card"><span>“</span><p>Dance is the conversation between your body and the music.</p><small>NAVEEN STUDIOS</small></div>
-              <div className="gallery-item"><img src="/pahadi.webp" alt="Pahadi dance" /></div>
-              <div className="gallery-item"><img src="/bollywood.webp" alt="Bollywood dance" /></div>
             </div>
           </section>
 
@@ -266,51 +251,49 @@ Message: ${message || "-"}`;
             <div className="contact-tiles">
               <a
                 className="contact-tile"
-                href="https://wa.me/917018753503"
-                target="_blank"
-                rel="noreferrer"
+                href="#"
               >
                 <span className="tile-icon tile-whatsapp">◈</span>
                 <span className="tile-text">
                   <strong>WhatsApp</strong>
-                  <span>+91 70187 53503</span>
+                  <span>-</span>
                 </span>
               </a>
 
               <a
                 className="contact-tile"
-                href="mailto:naveenbhardwajjjjj@gmail.com"
+                href="#"
               >
                 <span className="tile-icon tile-email">✉</span>
                 <span className="tile-text">
                   <strong>Email</strong>
-                  <span>naveenbhardwajjjjj@gmail.com</span>
+                  <span>-</span>
                 </span>
               </a>
 
               <a
                 className="contact-tile"
-                href="https://www.instagram.com/naveen_dancestudio?igsi=MTJqZ2dleGcxNmo5eg=="
+                href="https://www.instagram.com/iamsunnyvasudev?stkn=MWF1aW85bG83eHJyMg=="
                 target="_blank"
                 rel="noreferrer"
               >
                 <span className="tile-icon tile-instagram">◎</span>
                 <span className="tile-text">
                   <strong>Instagram</strong>
-                  <span>@naveen_dancestudio</span>
+                  <span>@iamsunnyvasudev</span>
                 </span>
               </a>
 
               <a
                 className="contact-tile"
-                href="https://www.facebook.com/naveen.bhardwaj.167/"
+                href="https://youtu.be/bb12aoi6N1M"
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="tile-icon tile-facebook">f</span>
+                <span className="tile-icon tile-youtube">▶</span>
                 <span className="tile-text">
-                  <strong>Facebook</strong>
-                  <span>Naveen Bhardwaj</span>
+                  <strong>YouTube</strong>
+                  <span>Sunny Vasudev</span>
                 </span>
               </a>
             </div>
@@ -320,13 +303,13 @@ Message: ${message || "-"}`;
         <footer className="footer">
           <div className="footer-top">
             <a href="#home" className="logo">
-              <img src="/logo.webp" alt="Naveen Studios logo" className="logo-img" />
-              <div className="logo-text"><strong>NAVEEN</strong><span>STUDIOS</span></div>
+              <img src="/logo.webp" alt="Sunny Studios logo" className="logo-img" />
+              <div className="logo-text"><strong>SUNNY</strong><span>STUDIOS</span></div>
             </a>
             <p>Move freely. Learn deeply.<br />Live vibrantly.</p>
-            <div className="footer-links"><a href="#classes">Classes</a><a href="#about">About</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></div>
+            <div className="footer-links"><a href="#classes">Classes</a><a href="#about">About</a><a href="#contact">Contact</a></div>
           </div>
-          <div className="footer-bottom"><span>© 2026 Naveen Studios</span><span>Made for people who love to move.</span><a href="#home">Back to top ↑</a></div>
+          <div className="footer-bottom"><span>© 2026 Sunny Studios</span><span>Made for people who love to move.</span><a href="#home">Back to top ↑</a></div>
         </footer>
       </div>
 
@@ -367,7 +350,7 @@ Message: ${message || "-"}`;
             Message
             <textarea rows="3" value={trialForm.message} onChange={updateTrialField("message")} />
           </label>
-          <button type="submit" className="primary-btn">Send on WhatsApp <span>→</span></button>
+          <button type="submit" className="primary-btn">Send request <span>→</span></button>
         </form>
       </aside>
     </div>
